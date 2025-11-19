@@ -45,3 +45,7 @@ end
 gem "haml-rails", "~> 3.0"
 
 gem "jquery-rails", "~> 4.6"
+
+gem "httparty", "~> 0.23.2"
+
+gem "pry-rails", "~> 0.3.11"
