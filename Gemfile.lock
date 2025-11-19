@@ -81,6 +81,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.19.0)
       msgpack (~> 1.2)
+    bootstrap (5.3.5)
+      popper_js (>= 2.11.8, < 3)
     brakeman (7.1.1)
       racc
     builder (3.3.0)
@@ -97,6 +99,7 @@ GEM
     drb (2.2.3)
     erb (6.0.0)
     erubi (1.13.1)
+    ffi (1.17.2-arm64-darwin)
     globalid (1.3.0)
       activesupport (>= 6.1)
     haml (7.0.2)
@@ -184,6 +187,7 @@ GEM
     pg (1.6.2-x86_64-darwin)
     pg (1.6.2-x86_64-linux)
     pg (1.6.2-x86_64-linux-musl)
+    popper_js (2.11.8)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -244,6 +248,10 @@ GEM
       erb
       psych (>= 4.0.0)
       tsort
+    redis (5.4.1)
+      redis-client (>= 0.22.0)
+    redis-client (0.26.1)
+      connection_pool
     regexp_parser (2.11.3)
     reline (0.6.3)
       io-console (~> 0.5)
@@ -276,6 +284,14 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     securerandom (0.4.1)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
@@ -322,6 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap
   brakeman
   debug
   haml-rails (~> 3.0)
@@ -332,7 +349,9 @@ DEPENDENCIES
   pry-rails (~> 0.3.11)
   puma (>= 5.0)
   rails (~> 7.2.3)
+  redis (>= 4.0.1)
   rubocop-rails-omakase
+  sassc-rails
   sprockets-rails
   tzinfo-data
   web-console
