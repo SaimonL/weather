@@ -10,7 +10,8 @@ module WeatherApiService
       if response.code == 200
         response.as_json
       else
-        ApiErrors.new(response).process
+        error = response.as_json["error"]
+        raise error["message"]
       end
     end
 
