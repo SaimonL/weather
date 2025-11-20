@@ -1,0 +1,6 @@
+--require spec_helper
+--color
+--format documentation
+--format json -o "coverage/rspec.json"
+--format html -o "coverage/rspec.html"
+--require spec_helper

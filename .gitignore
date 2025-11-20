@@ -38,3 +38,7 @@
 # IDE
 .idea
 .vscode
+
+# Test
+/coverage
+/spec/examples.txt
