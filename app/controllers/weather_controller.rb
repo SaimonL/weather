@@ -5,7 +5,7 @@ class WeatherController < ApplicationController
   end
 
   def retrieve
-    return redirect_to weather_index_path, alert: "Please enter a valid zip code" if @zip_code.blank?
+    return redirect_to weather_index_path, notice: "Please enter a valid zip code" if @zip_code.blank?
 
     # Even though we ask for zip code, it can also take city name, Latitude and Longitude, IP address ...
     ws = weather_service(@zip_code)
@@ -15,10 +15,9 @@ class WeatherController < ApplicationController
       @location_details = ws.location_details
       @weather_details = ws.weather_details
     rescue StandardError => e
-      # Note: In production you don't want to expose `e.message`
-      # Instead report it to Sentry.IO or DataDog
+      # TODO: In production you don't want to expose `e.message` Instead report it to Sentry.IO or DataDog
       return redirect_to weather_index_path,
-                         notice: "An error has occurred when searching #{@zip_code}, please try again later. #{e.message}"
+                         alert: "An error has occurred when searching #{@zip_code}, please try again later. #{e.message}"
     end
 
     render :index
