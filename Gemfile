@@ -34,5 +34,6 @@ end
 group :test do
   gem "database_cleaner-active_record"
   gem "database_cleaner-redis"
+  gem "rspec-its"
   gem "simplecov", require: false
 end
