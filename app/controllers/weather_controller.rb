@@ -31,7 +31,7 @@ class WeatherController < ApplicationController
 
     def set_zip_code
       @zip_code = weather_params[:zip_code]&.strip
-      @zip_code = @zip_code[0..100] if @zip_code # Prevent large string attack
+      @zip_code = @zip_code[0..100].to_letters_and_numbers if @zip_code # Prevent large string attack
     end
 
     def weather_service(zip_code)
