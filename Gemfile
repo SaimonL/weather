@@ -37,4 +37,5 @@ group :test do
   gem "rspec-its"
   gem "rspec-stubbed_env"
   gem "simplecov", require: false
+  gem "webmock"
 end
