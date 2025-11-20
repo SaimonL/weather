@@ -25,3 +25,14 @@ I am using [Weather API](https://www.weatherapi.com/) 3rd party service.
 You can signup and get an API key that gives you 1 million api calls a month for free.
 You can visit their [doc](https://www.weatherapi.com/docs/) section for more details. 
 
+The code for the API call is located in folder: "app/services/weather_api_service/"  
+
+The configuration is located: "config/initializers/weather_api.rb"  
+You can change the cache minutes by changing `WEATHER_CACHE_TTL_MINUTES`.  
+You can also change the version `WEATHER_API_VERSION`. Currently, it only has v1.
+
+
+## Test
+
+RSpec is used. You can run it by executing `bin/rspec` or `bundle exec rspec`.
+Once you are done running the test, see the coverage "coverage/rspec.html".
