@@ -12,7 +12,9 @@ gem "jquery-rails", "~> 4.6"
 gem "httparty", "~> 0.23.2"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem "bootstrap_form", "~> 5.5"
 gem "sassc-rails"
+gem "render-text-helper"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
