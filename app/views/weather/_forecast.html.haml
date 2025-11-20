@@ -1,0 +1,39 @@
+%dl.row
+  %dt.col-sm-3 Last Radar Update
+  %dd.col-sm-9= weather_details['last_updated']
+
+  %dt.col-sm-3 Temp C &deg;
+  %dd.col-sm-9= weather_details['temp_c']
+
+  %dt.col-sm-3 Feels like C &deg;
+  %dd.col-sm-9= weather_details['feelslike_c']
+
+  %dt.col-sm-3 Temp F &deg;
+  %dd.col-sm-9= weather_details['temp_f']
+
+  %dt.col-sm-3 Feels like F &deg;
+  %dd.col-sm-9= weather_details['feelslike_f']
+
+  %dt.col-sm-3 Condition
+  %dd.col-sm-9= weather_details['condition']['text']
+
+  %dt.col-sm-3 Wind MPH / KPH
+  %dd.col-sm-9= [weather_details['wind_mph'], weather_details['wind_kph']].join(' / ')
+
+  %dt.col-sm-3 Wind Direction
+  %dd.col-sm-9= weather_details['wind_dir']
+
+  %dt.col-sm-3 Humidity
+  %dd.col-sm-9= weather_details['humidity']
+
+  %dt.col-sm-3 Percentage Cloud
+  %dd.col-sm-9= weather_details['cloud']
+
+  %dt.col-sm-3 Dew Point C &deg;
+  %dd.col-sm-9= weather_details['dewpoint_c']
+
+  %dt.col-sm-3 Dew Point F &deg;
+  %dd.col-sm-9= weather_details['dewpoint_f']
+
+  %dt.col-sm-3 UV Index
+  %dd.col-sm-9= weather_details['uv']

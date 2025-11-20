@@ -1,0 +1,35 @@
+%h1 Weather Report
+
+%header
+  Want to see the weather?
+  Now you can. Just enter your location below and get current weather details.
+
+%br
+= render partial: 'layouts/alerts'
+%br
+
+%body
+  %div.card
+    %div.card-body
+      = bootstrap_form_tag(url: weather_retrieve_path) do |f|
+        = f.text_field :zip_code, value: @zip_code, help: 'Please enter one zip code.'
+        = f.submit 'Retrieve Weather Report', class: 'btn btn-primary'
+
+
+- unless @location_details.blank? || @weather_details.blank?
+  %br
+  %div.card
+    %div.card-header
+      = [@location_details['name'], @location_details['region']].join(', ')
+      - if @is_cached_data
+        (Cached Data)
+      - else
+        (Live Data)
+
+    %div.card-body
+      %div.row
+        %div.col
+          = render partial: 'weather/forecast', locals: { weather_details: @weather_details }
+
+        %div.col
+          = render partial: 'weather/address', locals: { location_details: @location_details }
