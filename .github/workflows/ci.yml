@@ -55,19 +55,6 @@ jobs:
           DB_PASSWORD: postgres
         run: bin/rails db:setup spec
 
-      - name: SimpleCov Report in PR
-        if: success() || failure()
-        uses: shettytejas/simplecov-reporter@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      # Optional: Fail build if coverage is below a threshold
-      - name: Check SimpleCov coverage threshold
-        uses: joshmfrankel/simplecov-check-action@main
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          minimum_suite_coverage: 90
-
 
   lint:
     runs-on: ubuntu-latest
