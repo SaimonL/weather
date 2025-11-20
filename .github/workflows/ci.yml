@@ -51,7 +51,6 @@ jobs:
       - name: Run RSpec Test
         env:
           RAILS_ENV: test
-          DB_HOST: postgres
           DB_PASSWORD: postgres
         run: bin/rails db:setup spec
 
