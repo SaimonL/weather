@@ -32,7 +32,17 @@ You can change the cache minutes by changing `WEATHER_CACHE_TTL_MINUTES`.
 You can also change the version `WEATHER_API_VERSION`. Currently, it only has v1.
 
 
-## Test
+## Rspec
 
-RSpec is used. You can run it by executing `bin/rspec` or `bundle exec rspec`.
+RSpec is used to testing. You can run it by executing `bin/rspec` or `bundle exec rspec`.
 Once you are done running the test, see the coverage "coverage/rspec.html".
+
+## Code Style Check
+
+Rubocop is used for code style checking.  
+You can run it by executing `bundle exec rubocop`.
+
+## Security Scan
+
+Brakeman is used to do code security scan.
+You can run it by executing `bundle exec brakeman`
