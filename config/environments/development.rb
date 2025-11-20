@@ -21,7 +21,8 @@ Rails.application.configure do
   config.action_controller.enable_fragment_cache_logging = true
 
   # config.cache_store = :memory_store
-  config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"], expires_in: 1.day }
+  config.cache_store = :redis_cache_store,
+    { url: ENV.fetch("REDIS_URL", "redis://localhost:6379/0"), expires_in: 1.day }
   config.public_file_server.headers = { "Cache-Control" => "public, max-age=#{2.days.to_i}" }
 
   # Don't care if the mailer can't send.
