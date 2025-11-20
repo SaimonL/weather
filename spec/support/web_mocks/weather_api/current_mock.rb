@@ -3,7 +3,7 @@
 RSpec.shared_context 'mock api response from weather api' do
   let(:api_response_body) { file_fixture('weather_api/current_response.json').read }
 
-  def mock_current_get_request(url)
+  def mock_current_get_response(url)
     # "https://api.weatherapi.com/v1/current.json?key=...&q=06484"
     stub_request(:get, url).
       with(

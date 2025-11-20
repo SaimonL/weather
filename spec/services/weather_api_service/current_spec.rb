@@ -35,7 +35,7 @@ RSpec.describe WeatherApiService::Current, type: :feature do
 
     let(:url) { service.api_call_url(zip_code) }
 
-    before { mock_current_get_request(url) }
+    before { mock_current_get_response(url) }
 
     its(:size)    { should eq(2) }
     its(:keys)    { is_expected.to eq(%w[location current]) }
@@ -46,7 +46,7 @@ RSpec.describe WeatherApiService::Current, type: :feature do
 
     let(:url) { service.api_call_url(zip_code) }
 
-    before { mock_current_get_request(url) }
+    before { mock_current_get_response(url) }
 
     its([ 'name' ])       { is_expected.to eq('Shelton') }
     its([ 'region' ])     { is_expected.to eq('Connecticut') }
@@ -60,7 +60,7 @@ RSpec.describe WeatherApiService::Current, type: :feature do
 
     let(:url) { service.api_call_url(zip_code) }
 
-    before { mock_current_get_request(url) }
+    before { mock_current_get_response(url) }
 
     # Only test what we actually use. Otherwise its too much noise
     its([ 'last_updated' ])   { is_expected.to eq('2025-11-19 07:15') }
