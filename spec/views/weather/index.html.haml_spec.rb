@@ -23,7 +23,6 @@ RSpec.describe 'weather/index', type: :view do
         assert_select 'input[name=?]', 'commit',    count: 1
       end
     end
-
   end
 
   describe 'after searching weather' do
